@@ -1,14 +1,3 @@
-<p align="center">
-<pre>
-███╗   ███╗ █████╗ ████████╗██████╗ ██╗ ██████╗ ███╗   ██╗
-████╗ ████║██╔══██╗╚══██╔══╝██╔══██╗██║██╔═══██╗████╗  ██║
-██╔████╔██║███████║   ██║   ██████╔╝██║██║   ██║██╔██╗ ██║
-██║╚██╔╝██║██╔══██║   ██║   ██╔═══╝ ██║██║   ██║██║╚██╗██║
-██║ ╚═╝ ██║██║  ██║   ██║   ██║     ██║╚██████╔╝██║ ╚████║
-╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-</pre>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=200&pause=5000&color=00FF00&center=true&vCenter=true&width=1000&lines=Человек+формирует+робототехнику+по+своему+образу+и+подобию,+стремясь+отразить+себя+в+искусственном.;В+своем+желании+творить+он+приближается+к+замене+себя,+стирая+границы+между+ними.|" alt="typing animation with blinking cursor" />
+<p align="center" style="background-color:black;">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=120&pause=1000&color=FFFFFF&center=true&vCenter=true&multiline=true&repeat=false&width=1200&lines=Человек+формирует+робототехнику+по+своему+образу+и+подобию;стремясь+отразить+себя+в+искусственном.;В+своем+желании+творить+он+приближается+к+замене+себя;стирая+границы+между+ними.|" />
 </p>
