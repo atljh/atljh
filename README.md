@@ -1,1 +1,1 @@
-[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=%2336BCF7&lines=Человек+формирует+робототехнику+по+своему+образу+и+подобию,+стремясь+отразить+себя+в+искусственном.+В+своем+желании+творить+он+приближается+к+замене+себя,+стирая+границы+между+ними.)](https://git.io/typing-svg)
