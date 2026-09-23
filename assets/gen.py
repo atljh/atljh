@@ -32,12 +32,6 @@ THEMES = {
                   muted="#59636e", border="#d1d9e0", quote="#31363c"),
 }
 
-QUOTE = [
-    "Человек формирует робототехнику по своему образу и подобию,",
-    "стремясь отразить себя в искусственном.",
-    "В своём желании творить он приближается к замене себя,",
-    "стирая границы между ними.",
-]
 
 
 
@@ -152,7 +146,6 @@ def main():
     for theme, c in THEMES.items():
         svg, h = banner(c)
         (HERE / f"banner-{theme}.svg").write_text(svg.replace('height="430"', f'height="{h}"').replace("0 0 1200 430", f"0 0 1200 {h}"))
-        (HERE / f"quote-{theme}.svg").write_text(quote(c, QUOTE))
         (HERE / f"now-{theme}.svg").write_text(quote(c, ["Now building GramGPT"], link="GramGPT"))
 
 
