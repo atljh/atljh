@@ -4,4 +4,4 @@
 
 <br>
 
-Now building [GramGPT](https://gramgpt.io).
+<a href="https://gramgpt.io"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img alt="Now building GramGPT" src="assets/now-light.svg"></picture></a>

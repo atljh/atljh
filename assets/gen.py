@@ -71,7 +71,7 @@ def embed(key, text, wght=None):
     tt.flavor = "woff"
     tt.save(buf)
     b64 = base64.b64encode(buf.getvalue()).decode()
-    name = f"{key}{wght or ''}"
+    name = f"pp-{key}{wght or ''}"  # never a generic keyword like `serif`
     return name, f"@font-face{{font-family:{name};src:url(data:font/woff;base64,{b64}) format('woff')}}"
 
 
@@ -131,26 +131,29 @@ def banner(c):
     return "\n".join(out), Y0 + rows * P + 24
 
 
-def quote(c):
+def quote(c, lines, link=None):
+    """Serif lines behind a blue rule; `link` (a word in them) is painted blue."""
     W, size, lh = 1200, 30, 46
-    fq, css = embed("serif", "".join(QUOTE))
-    H = len(QUOTE) * lh + 28
+    fq, css = embed("serif", "".join(lines))
+    H = len(lines) * lh + 28
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">',
            f"<style>{css}</style>",
            f'<rect x="48" y="6" width="3" height="{H - 12}" fill="{c["lit"]}"/>']
-    for i, l in enumerate(QUOTE):
-        out.append(f'<text x="78" y="{40 + i * lh}" font-family="{fq}" font-size="{size}" fill="{c["quote"]}">{esc(l)}</text>')
+    for i, l in enumerate(lines):
+        l = esc(l)
+        if link:
+            l = l.replace(link, f'<tspan fill="{c["lit"]}">{link}</tspan>')
+        out.append(f'<text x="78" y="{40 + i * lh}" font-family="{fq}" font-size="{size}" fill="{c["quote"]}">{l}</text>')
     out.append("</svg>")
     return "\n".join(out)
-
-
 
 
 def main():
     for theme, c in THEMES.items():
         svg, h = banner(c)
         (HERE / f"banner-{theme}.svg").write_text(svg.replace('height="430"', f'height="{h}"').replace("0 0 1200 430", f"0 0 1200 {h}"))
-        (HERE / f"quote-{theme}.svg").write_text(quote(c))
+        (HERE / f"quote-{theme}.svg").write_text(quote(c, QUOTE))
+        (HERE / f"now-{theme}.svg").write_text(quote(c, ["Now building GramGPT"], link="GramGPT"))
 
 
 if __name__ == "__main__":
