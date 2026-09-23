@@ -1,5 +1,1 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><img alt="atljh" src="assets/banner-light.svg"></picture>
-
-<br>
-
-<a href="https://gramgpt.io"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg"><img alt="Now building GramGPT" src="assets/now-light.svg"></picture></a>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/quote-dark.svg"><img alt="Человек формирует робототехнику по своему образу и подобию, стремясь отразить себя в искусственном. В своём желании творить он приближается к замене себя, стирая границы между ними." src="assets/quote-light.svg"></picture>
