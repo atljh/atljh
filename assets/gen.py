@@ -6,7 +6,6 @@ serves README images through a proxy that blocks external font requests.
 """
 
 import base64
-import hashlib
 import io
 import random
 import urllib.request
@@ -40,14 +39,6 @@ QUOTE = [
     "стирая границы между ними.",
 ]
 
-PROJECTS = [
-    ("GhostMove", "Reads a chess board off your screen and shows Stockfish's best move in under 300 ms.", "Go", "#00ADD8"),
-    ("Codemancer", "A command deck for coding with AI agents: dependency maps, tech-debt radar, voice link.", "TypeScript", "#3178c6"),
-    ("TeleGen", "Pulls posts from channels, RSS and the web, rewrites them with AI and publishes on schedule.", "Python", "#3572A5"),
-    ("TeleCloneX", "Clones Telegram channels across many accounts and makes every copy unique.", "Python", "#3572A5"),
-    ("VideoUniqueizer", "Batch-processes videos so every file comes out different: watermarks, overlays, tweaks.", "Python", "#3572A5"),
-    ("AlphaSnobAI", "A Telegram userbot with a snobbish AI personality and a desktop control panel.", "Python", "#3572A5"),
-]
 
 
 def font_path(key):
@@ -82,18 +73,6 @@ def embed(key, text, wght=None):
     b64 = base64.b64encode(buf.getvalue()).decode()
     name = f"{key}{wght or ''}"
     return name, f"@font-face{{font-family:{name};src:url(data:font/woff;base64,{b64}) format('woff')}}"
-
-
-def wrap(text, font, width):
-    lines, cur = [], ""
-    for w in text.split():
-        t = f"{cur} {w}".strip()
-        if font.getlength(t) <= width:
-            cur = t
-        else:
-            lines.append(cur)
-            cur = w
-    return lines + [cur]
 
 
 def esc(s):
@@ -165,37 +144,6 @@ def quote(c):
     return "\n".join(out)
 
 
-def identicon(name, x0, y0, c, p=11, r=3.7):
-    """Mirrored 5x5 dot sigil seeded by the project name."""
-    h = hashlib.sha256(name.encode()).digest()
-    out, i = [], 0
-    for y in range(5):
-        for x in range(3):
-            on = h[i] % 5 < 3
-            i += 1
-            for xx in {x, 4 - x}:
-                out.append(f'<circle cx="{x0 + xx * p + p / 2}" cy="{y0 + y * p + p / 2}" r="{r if on else 1.4}" fill="{c["lit"] if on else c["field"]}"/>')
-    return "".join(out)
-
-
-def card(proj, c):
-    name, desc, lang, lang_color = proj
-    W, H = 580, 172
-    body = pil_font("manrope", 16, 500)
-    lines = wrap(desc, body, W - 140)
-    ft, css_t = embed("unbounded", name, 600)
-    fd, css_d = embed("manrope", desc + lang, 500)
-    out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">',
-           f"<style>{css_t}{css_d}</style>",
-           f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="14" fill="none" stroke="{c["border"]}"/>',
-           identicon(name, 26, 30, c),
-           f'<text x="110" y="52" font-family="{ft}" font-size="21" fill="{c["text"]}">{name}</text>']
-    for i, l in enumerate(lines[:2]):
-        out.append(f'<text x="110" y="{84 + i * 24}" font-family="{fd}" font-size="16" fill="{c["muted"]}">{esc(l)}</text>')
-    out.append(f'<circle cx="116" cy="{H - 30}" r="6" fill="{lang_color}"/>')
-    out.append(f'<text x="130" y="{H - 25}" font-family="{fd}" font-size="14" fill="{c["muted"]}">{lang}</text>')
-    out.append("</svg>")
-    return "\n".join(out)
 
 
 def main():
@@ -203,8 +151,6 @@ def main():
         svg, h = banner(c)
         (HERE / f"banner-{theme}.svg").write_text(svg.replace('height="430"', f'height="{h}"').replace("0 0 1200 430", f"0 0 1200 {h}"))
         (HERE / f"quote-{theme}.svg").write_text(quote(c))
-        for p in PROJECTS:
-            (HERE / f"card-{p[0].lower()}-{theme}.svg").write_text(card(p, c))
 
 
 if __name__ == "__main__":
