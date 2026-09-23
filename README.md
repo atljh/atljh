@@ -1,42 +1,11 @@
-<div align="center">
+<a href="https://gramgpt.io"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg"><img alt="atljh — Fyodor, Ukraine. I build GramGPT." src="assets/banner-light.svg"></picture></a>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=5000&pause=1000&color=7A7A7A&center=true&vCenter=true&width=640&lines=Человек+формирует+робототехнику+по+своему+образу+и+подобию;стремясь+отразить+себя+в+искусственном.;В+своём+желании+творить+он+приближается+к+замене+себя;стирая+границы+между+ними.)](https://git.io/typing-svg)
-
-<br>
-
-**Fyodor** · Ukraine · building [**GramGPT**](https://gramgpt.io) — Telegram automation at scale
-
-<sub>Python backends, async workers, Telethon, AI pipelines. Things that run 24/7 on thousands of accounts.</sub>
-
-<br><br>
-
-<img src="https://skillicons.dev/icons?i=python,django,fastapi,go,ts,vue,nuxtjs,nextjs,postgres,redis,docker,nginx,grafana,prometheus,linux&theme=dark&perline=15" />
-
-</div>
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/quote-dark.svg"><img alt="Человек формирует робототехнику по своему образу и подобию…" src="assets/quote-light.svg"></picture>
 
 <br>
 
-### ▸ Now
+<a href="https://github.com/atljh/GhostMove"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-ghostmove-dark.svg"><img alt="GhostMove" src="assets/card-ghostmove-light.svg" width="49%"></picture></a> <a href="https://github.com/atljh/Codemancer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-codemancer-dark.svg"><img alt="Codemancer" src="assets/card-codemancer-light.svg" width="49%"></picture></a>
 
-- **GramGPT** — SaaS for Telegram: AI commenting, chatting, shilling, warming, parsing. Django + Redis Streams worker + Nuxt 4.
-- Video tooling on the side: specreel & VideoForge — spec in, mp4 out.
+<a href="https://github.com/atljh/TeleGen"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-telegen-dark.svg"><img alt="TeleGen" src="assets/card-telegen-light.svg" width="49%"></picture></a> <a href="https://github.com/atljh/TeleCloneX"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-teleclonex-dark.svg"><img alt="TeleCloneX" src="assets/card-teleclonex-light.svg" width="49%"></picture></a>
 
-### ▸ Open source
-
-| Project | What it does | Stack |
-|---|---|---|
-| [**GhostMove**](https://github.com/atljh/GhostMove) | Real-time chess position analyzer — reads the board from your screen, runs Stockfish | Go |
-| [**Codemancer**](https://github.com/atljh/Codemancer) | Strategic command deck for AI-native engineering | TypeScript |
-| [**VideoUniqueizer**](https://github.com/atljh/VideoUniqueizer) | Batch video uniqueization: watermarks, overlays, per-file variations | Python |
-| [**TeleGen**](https://github.com/atljh/TeleGen) | AI content generation platform for Telegram channels | Django · Postgres · Redis |
-| [**TeleCloneX**](https://github.com/atljh/TeleCloneX) | Multi-account Telegram channel cloning with content uniqueization | Python · Telethon |
-| [**AlphaSnobAI**](https://github.com/atljh/AlphaSnobAI) | AI userbot with a personality and a desktop GUI | Python |
-| [**Nexus**](https://github.com/atljh/Nexus) | Desktop app for Telegram automation | Python · Node |
-
-<br>
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/atljh/atljh/output/snake.svg" alt="snake" />
-
-</div>
+<a href="https://github.com/atljh/VideoUniqueizer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-videouniqueizer-dark.svg"><img alt="VideoUniqueizer" src="assets/card-videouniqueizer-light.svg" width="49%"></picture></a> <a href="https://github.com/atljh/AlphaSnobAI"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-alphasnobai-dark.svg"><img alt="AlphaSnobAI" src="assets/card-alphasnobai-light.svg" width="49%"></picture></a>
