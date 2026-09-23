@@ -131,12 +131,8 @@ def banner(c):
     W, H, P, X0, Y0 = 1200, 430, 12, 48, 48
     dots, rows = dotmatrix("atljh", 80)
     rnd = random.Random(7)
-    lead = "Fyodor, Ukraine"
-    line = "I build GramGPT: software that runs thousands of Telegram accounts as one fleet."
-    fb, css_b = embed("manrope", lead, 700)
-    fm, css_m = embed("manrope", line, 500)
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">',
-           f"<style>{css_b}{css_m}{MOTION}</style>",
+           f"<style>{MOTION}</style>",
            f'<defs><pattern id="f" width="{P}" height="{P}" patternUnits="userSpaceOnUse">'
            f'<circle cx="{P/2}" cy="{P/2}" r="1.3" fill="{c["field"]}"/></pattern>'
            f'<linearGradient id="g" x2="1"><stop offset=".35" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
@@ -152,11 +148,8 @@ def banner(c):
             out.append(f'<circle class="p" style="animation-delay:{delay:.2f}s,{2 + rnd.random() * 6:.1f}s" cx="{cx}" cy="{cy}" r="4.3" fill="{c["lit"]}"/>')
         else:
             out.append(f'<circle class="d" style="animation-delay:{delay:.2f}s" cx="{cx}" cy="{cy}" r="4.3" fill="{c["lit"]}"/>')
-    ty = Y0 + rows * P + 64
-    out.append(f'<text x="{X0}" y="{ty}" font-family="{fb}" font-size="22" fill="{c["text"]}">{lead}</text>')
-    out.append(f'<text x="{X0}" y="{ty + 36}" font-family="{fm}" font-size="22" fill="{c["muted"]}">{esc(line)}</text>')
     out.append("</svg>")
-    return "\n".join(out), ty + 36 + 40
+    return "\n".join(out), Y0 + rows * P + 24
 
 
 def quote(c):
