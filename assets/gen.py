@@ -54,15 +54,7 @@ def build(c):
     font.set_variation_by_axes([600])
     rnd = random.Random(7)
     H = Y0 * 2 + LEAD * P * len(LINES)
-    style = [
-        ".l{animation:type 1.1s steps(40,end) both}",
-        "@keyframes type{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}",
-        ".f{animation:blink 6s ease-in-out infinite}",
-        "@keyframes blink{0%,70%,100%{opacity:1}82%{opacity:.1}}",
-        "@media (prefers-reduced-motion:reduce){*{animation:none!important}}",
-    ]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">',
-           f"<style>{''.join(style)}</style>",
            f'<defs><pattern id="g" width="{P}" height="{P}" patternUnits="userSpaceOnUse">'
            f'<circle cx="{P / 2}" cy="{P / 2}" r=".9" fill="{c["field"]}"/></pattern></defs>',
            f'<rect width="{W}" height="{H}" fill="url(#g)"/>',
@@ -75,11 +67,10 @@ def build(c):
                 raise SystemExit(f"line too wide: {line!r}")
             roll = rnd.random()
             (off if roll < 0.03 else flick if roll < 0.045 else lit).append(f"M{cx:g} {cy:g}h0")
-        out.append(f'<g class="l" style="animation-delay:{i * 0.9:.1f}s">'
+        out.append('<g>'
                    f'<path stroke="{c["lit"]}" d="{"".join(lit)}"/>'
                    f'<path stroke="{c["off"]}" d="{"".join(off)}"/>'
-                   # a few accounts blinking online/offline, revealed with their line
-                   + "".join(f'<path class="f" style="animation-delay:{7 + rnd.random() * 8:.1f}s" stroke="{c["lit"]}" d="{d}"/>' for d in flick)
+                   + "".join(f'<path stroke="{c["lit"]}" d="{d}"/>' for d in flick)
                    + "</g>")
     out.append("</g></svg>")
     return "\n".join(out)
